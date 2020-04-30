@@ -121,6 +121,19 @@ li {
     color: #0F9B8E;
 }
 
+.version-text-desktop {
+    display: block;
+    letter-spacing: 0.3rem;
+    font-size: 1.3rem;
+    margin-top: 2rem;
+}
+.version-text-mobile {
+    display: none;
+    letter-spacing: 0.25rem;
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+}
+
 @keyframes blinking {
     0% {
         background-color: rgba(15, 155, 141, 0.39);
@@ -133,13 +146,32 @@ li {
     }
 }
 
-/* @keyframes blinkingClock {
-    0% {
-        color: rgba(15, 155, 141, 0.39);
+@media only screen and (max-width: 600px) {
+    main {
+        top: 3vh;
     }
-    100% {
-        color: #0F9B8E;
+    .link {
+        height: 5rem;
+        width: 5rem;
+        margin: 1rem 1rem;
     }
-} */
+    .search-box {
+        margin-top: 1.5rem;
+        margin-right: 2rem;
+    }
+    .search-bar {
+        width: 60%;
+    }
+    .time {
+        font-size: 5rem;
+    }
+
+    .version-text-desktop {
+        display: none;
+    }
+    .version-text-mobile {
+        display: block;
+    }
+}
 
 
