@@ -8,7 +8,10 @@ unsusceptible blue/green
 */
 
 body {
-    background-color: #343837;
+    background: rgb(52, 56, 55);
+    background-image: url(./img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #0F9B8E;
     text-align: center;
 }
@@ -16,8 +19,7 @@ body {
 main {
     display: block;
     position: relative;
-    top: 15vh;
-    margin: auto;
+    top: 10vh;
 }
 
 ul {
