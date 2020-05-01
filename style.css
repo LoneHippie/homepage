@@ -31,6 +31,7 @@ nav {
     text-align: end;
     margin-top: -20px;
     margin-bottom: -5rem;
+    backface-visibility: hidden;
 }
 .nav-list {
     display: inline-block;
