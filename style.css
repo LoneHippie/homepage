@@ -24,6 +24,8 @@ main {
     top: 10vh;
 }
 
+/* Navigation header */
+
 nav {
     font-family: 'Baloo Tamma 2', cursive;
     font-weight: 400;
@@ -64,6 +66,18 @@ nav {
     transition: all 400ms;
 }
 
+.nav-li:nth-child(1) {
+    animation: dropDown 1500ms ease-out;
+}
+.nav-li:nth-child(2) {
+    animation: dropDown 1750ms ease-out;
+}
+.nav-li:nth-child(3) {
+    animation: dropDown 2000ms ease-out;
+}
+
+/* Icon Links */
+
 ul {
     list-style: none;
     padding: 0;
@@ -84,12 +98,16 @@ li {
     background-color: #0F9B8E;
     box-shadow: 2px 5px 10px rgb(34, 34, 34);
     transition: all 500ms;
+
+    animation: scaleOut 1000ms ease-out;
 }
 .link:hover {
     transform: translateY(-0.5rem);
     box-shadow: 2px 13px 17px rgb(34, 34, 34);
     transition: all 200ms;
 }
+
+/* Search Bar and Button */
 
 .search-box {
     display: inline-block;
@@ -147,6 +165,8 @@ li {
     animation: infinite blinking 2000ms ease-in-out;
 }
 
+/* Clock */
+
 .time-box {
     display: block;
     position: relative;
@@ -163,6 +183,8 @@ li {
     color: #0F9B8E;
 }
 
+/* Footer */
+
 .version-text-desktop {
     display: block;
     letter-spacing: 0.3rem;
@@ -176,6 +198,8 @@ li {
     margin-top: 1.5rem;
 }
 
+/* Animations */
+
 @keyframes blinking {
     0% {
         background-color: rgba(15, 155, 141, 0.39);
@@ -187,6 +211,33 @@ li {
         background-color: rgba(15, 155, 141, 0.39);
     }
 }
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes scaleOut {
+    0% {
+        opacity: 0%;
+        transform: scale(0.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Window size scaling */
 
 @media only screen and (max-width: 975px) {
     nav {
