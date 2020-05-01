@@ -25,8 +25,8 @@ main {
 }
 
 nav {
-    font-family: 'Baloo Tamma 2', cursive;
-    font-weight: 400;
+    /* font-family: 'Baloo Tamma 2', cursive;
+    font-weight: 400; */
     position: relative;
     text-align: end;
     margin-top: -20px;
