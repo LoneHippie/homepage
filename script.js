@@ -1,13 +1,41 @@
 const DOMstring = {
     searchBar: document.querySelector('.search-bar'),
     searchButton: document.getElementById('btn-search'),
+    menuClass: document.querySelector('.btn-menu'), //to add/remove class type "active"
+    menuStatus: document.querySelector('.side-nav'),
     clock: document.getElementById('clock')
 };
 
     //NAV SECTION
 
 let searchActive; //returns true/false
+let menuActive; //returns true/false
+
 const searchPreface = 'https://www.google.com/search?q=';
+
+function toggleMenuActive() { //toggles active class and checks to see if exists or not w/menuActive boolean
+    let active = document.querySelector('.active');
+
+    DOMstring.menuClass.classList.toggle('active');
+
+    if (typeof(active) !== 'undefined' && active !== null) {
+        //inactive state
+        return menuActive = false;
+    } else {
+        //active state
+        return menuActive = true;
+    };
+}
+
+function openMenu() { //toggles active class for side-nav div based on menuActive status
+    if (menuActive == true) {
+        DOMstring.menuStatus.classList.add('active');
+        //console.log('open sesame');
+    } else {
+        DOMstring.menuStatus.classList.remove('active');
+        //console.log('close sesame );');
+    }
+};
 
 function arrowSelect() { //functionality for up/down arrows to select/deselect searchbar
     if (event.keyCode == 40) {
@@ -25,6 +53,8 @@ function checkActive() { //checks if searchbar is active and changes searchActiv
         //console.log('SEARCHBAR DESELECTED');
         return searchActive = false;
     }
+
+    
 };
 
 function addBtnFocus() { //adds a focus class to search button if search bar is focused. Toggles inactive class for animation purposes too
@@ -64,7 +94,7 @@ document.addEventListener('keydown', function(event) { //functionality for UP/DO
     //console.log(searchActive);
 });
 
-document.addEventListener('click', function() { //all click functionality
+document.addEventListener('click', function() { //all click functionality for searching
     checkActive();
     addBtnFocus();
 
@@ -74,6 +104,13 @@ document.addEventListener('click', function() { //all click functionality
 
     //console.log(searchActive);
 });
+
+document.getElementById('btn-menu').addEventListener('click', function() { //functionality for side menu
+    //function to toggle button class and return t/f value for menuActive
+    toggleMenuActive();
+    //based on return boolean value, open/close menu
+    openMenu();
+})
 
     //CLOCK
 
